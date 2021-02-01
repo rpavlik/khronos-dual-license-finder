@@ -55,6 +55,7 @@ compileKotlin {
     kotlinOptions.jvmTarget = "11"
 }
 
+// we have access-filter.json to work around this: https://github.com/oracle/graal/issues/2490
 nativeImage {
     graalVmHome = System.getProperty('java.home')
     // jarTask = shadowJar
@@ -63,10 +64,14 @@ nativeImage {
     outputDirectory = file("$buildDir/bin")
     arguments {
         add '--no-fallback'
-        // add '--enable-all-security-services'
-        add '--report-unsupported-elements-at-runtime'
+        add '--enable-all-security-services'
+        // add '--report-unsupported-elements-at-runtime'
         add '--install-exit-handlers'
-        add '--allow-incomplete-classpath'
+        // add '--allow-incomplete-classpath'
+        add '-H:IncludeResources=".*stdlicenses.*$"'
+        add '--enable-url-protocols=http,https'
+        add '-H:Log=registerResource:'
+        add '--verbose'
     }
 }
 

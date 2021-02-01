@@ -1,0 +1,15 @@
+{
+    "resources": {
+        "includes": [
+            {
+                "pattern": ".*resources/listedexternaltypes/listedreferencetypes.properties"
+            },
+            
+            {
+                "pattern": ".*resources/stdlicenses/.*"
+            }
+        ],
+        "excludes": []
+    },
+    "bundles": []
+}

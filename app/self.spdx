@@ -1,0 +1,109 @@
+SPDXVersion: SPDX-2.1
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: process-spdx
+DocumentNamespace: http://spdx.org/spdxdocs/spdx-v2.1-7fdeea2f-b330-449e-8fc3-480135d5d27e
+Creator: Person: Anonymous ()
+Creator: Organization: Anonymous ()
+Creator: Tool: reuse-0.12.1
+Created: 2021-02-01T21:10:55Z
+CreatorComment: <text>This document was created automatically using available reuse information consistent with REUSE.</text>
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-2f29ebbe79e91ba25dee1773675a03cd
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-d2db856bd924decd8d1ac8a30a6a49ab
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-577a06029df1a5d637fe10a4230d7c7a
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-cdc32af50d694f7a0a82b95d357af416
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-e3e8d50c6596f138d20779c173c6c63d
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-ab3dd99de0c36ff15f80dc75e5aa1ee9
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-eeccfb32958909c8cfd6c147ea073a71
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-37694bbbcff329d7218c32064af2bc77
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-b3e98d79818cfb7edd775e26360edd84
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-a71ef034dab305a16e027c66d95bacb2
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-a57d8e81734085b21b763fde72ae1d1b
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-b4653d45bea2472d56355fa50a7e22dd
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-f535e211d959dae65424814997231fe5
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-71bac38d8841a7f86018bd22f4f49608
+
+FileName: ./.gitattributes
+SPDXID: SPDXRef-2f29ebbe79e91ba25dee1773675a03cd
+FileChecksum: SHA1: 777039aab46578247b8954e2f7d482826315fca8
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./.gitignore
+SPDXID: SPDXRef-d2db856bd924decd8d1ac8a30a6a49ab
+FileChecksum: SHA1: f43ceeb40d2c8835ef35667e50ecc3a5bbe39031
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./app\access-filter.json
+SPDXID: SPDXRef-577a06029df1a5d637fe10a4230d7c7a
+FileChecksum: SHA1: a42692a5b4ccd6cb26e2cdb91cbc7b5eabdc6731
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./app\build.gradle
+SPDXID: SPDXRef-cdc32af50d694f7a0a82b95d357af416
+FileChecksum: SHA1: 9a9eb11313be937dd1ff26c9afcb513657d63c58
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./app\build.gradle.kts.old
+SPDXID: SPDXRef-e3e8d50c6596f138d20779c173c6c63d
+FileChecksum: SHA1: 710b4b4bb7ef9fe8edbb933c79b967900e3d73d2
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./app\src\main\kotlin\org\khronos\spdx\dual_license_finder\App.kt
+SPDXID: SPDXRef-ab3dd99de0c36ff15f80dc75e5aa1ee9
+FileChecksum: SHA1: 5cc1a7ca990cbb2898eb2a91c229f69601054a50
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: BSL-1.0
+FileCopyrightText: <text>Copyright 2021, Collabora, Ltd.</text>
+
+FileName: ./app\src\main\resources\META-INF\app_org.khronos.spdx\app_org.khronos.spdx.dual_license_finder\native-image.properties
+SPDXID: SPDXRef-eeccfb32958909c8cfd6c147ea073a71
+FileChecksum: SHA1: bedfd629083fb74985f049bf2cd2be8891dcaa05
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./app\src\main\resources\META-INF\app_org.khronos.spdx\app_org.khronos.spdx.dual_license_finder\resource-config.json
+SPDXID: SPDXRef-37694bbbcff329d7218c32064af2bc77
+FileChecksum: SHA1: 39d379ff8e4eb20c0453e4f13e8d3689177b21d9
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./build.gradle.kts
+SPDXID: SPDXRef-b3e98d79818cfb7edd775e26360edd84
+FileChecksum: SHA1: d32f5090ba703d9a5aee603dfe56fa6c609318d3
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./gradle\wrapper\gradle-wrapper.jar
+SPDXID: SPDXRef-a71ef034dab305a16e027c66d95bacb2
+FileChecksum: SHA1: 2685e1a923d4c79dd549889406c6ffa9e8661744
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./gradle\wrapper\gradle-wrapper.properties
+SPDXID: SPDXRef-a57d8e81734085b21b763fde72ae1d1b
+FileChecksum: SHA1: b12d06e26fd68f5de4992243b1c1e9f1b74bef7b
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./gradlew
+SPDXID: SPDXRef-b4653d45bea2472d56355fa50a7e22dd
+FileChecksum: SHA1: f94aa91251d39fa9e80dc626a8df2672d597f8a1
+LicenseConcluded: NOASSERTION
+FileCopyrightText: <text>Copyright 2015 the original author or authors.</text>
+
+FileName: ./gradlew.bat
+SPDXID: SPDXRef-f535e211d959dae65424814997231fe5
+FileChecksum: SHA1: f5c317cf754bba8ad745e83649e9ce7c17e2f691
+LicenseConcluded: NOASSERTION
+FileCopyrightText: <text>Copyright 2015 the original author or authors.</text>
+
+FileName: ./settings.gradle.kts
+SPDXID: SPDXRef-71bac38d8841a7f86018bd22f4f49608
+FileChecksum: SHA1: 974e9ec891dc95f0888d8cfe2503dd8bfafaa0cd
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
