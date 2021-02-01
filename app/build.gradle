@@ -1,3 +1,9 @@
+/*
+ * Copyright 2021, Collabora, Ltd.
+ *
+ * SPDX-License-Identifier: BSL-1.0
+ */
+
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
     id "org.jetbrains.kotlin.jvm" version "1.4.21"
@@ -10,26 +16,20 @@ plugins {
 
     // Be able to build to a "native" image
     id "org.mikeneck.graalvm-native-image" version "1.2.0"
-    // id 'com.palantir.graal' version "0.7.2"
-    
-  id "dev.jacomet.logging-capabilities" version "0.9.0"
+
+    // Force the logging to use
+    id "dev.jacomet.logging-capabilities" version "0.9.0"
 }
 
-// apply plugin: 'com.palantir.graal'
 repositories {
     // Use JCenter for resolving dependencies.
     jcenter()
 }
 loggingCapabilities {
-    enforceSlf4JSimple()
+    // enforceSlf4JSimple()
+    enforceLogback()
 }
 
-// graal {
-//     mainClass 'org.khronos.spdx.dual_license_finder.AppKt'
-//     outputName 'dual_license_finder'
-//     // graalVersion '21.0.0'
-//     javaVersion 11
-// }
 dependencies {
     // Align versions of all Kotlin components
     implementation platform("org.jetbrains.kotlin:kotlin-bom")
@@ -42,11 +42,11 @@ dependencies {
 
     implementation "com.github.ajalt.clikt:clikt:3.1.0"
 
-    // Used by other stuff.
-  implementation "org.slf4j:slf4j-simple:1.7.28"
-    // compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.14.0'
-    // compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.0'
+    // Used by other stuff. We're using logback instead of log4j2 since it plays with native-image better.
+    // It still allows us to silence a warning by logger name.
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
 }
+
 group 'org.khronos.spdx'
 sourceCompatibility = 1.11
 mainClassName = "org.khronos.spdx.dual_license_finder.AppKt"
@@ -58,20 +58,19 @@ compileKotlin {
 // we have access-filter.json to work around this: https://github.com/oracle/graal/issues/2490
 nativeImage {
     graalVmHome = System.getProperty('java.home')
-    // jarTask = shadowJar
     mainClass = 'org.khronos.spdx.dual_license_finder.AppKt'
     executableName = 'dual_license_finder'
     outputDirectory = file("$buildDir/bin")
     arguments {
         add '--no-fallback'
         add '--enable-all-security-services'
-        // add '--report-unsupported-elements-at-runtime'
         add '--install-exit-handlers'
-        // add '--allow-incomplete-classpath'
+        add '--allow-incomplete-classpath'
         add '-H:IncludeResources=".*stdlicenses.*$"'
         add '--enable-url-protocols=http,https'
-        add '-H:Log=registerResource:'
-        add '--verbose'
+//        add '--report-unsupported-elements-at-runtime'
+//        add '-H:Log=registerResource:'
+//        add '--verbose'
     }
 }
 
