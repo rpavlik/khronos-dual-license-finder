@@ -67,10 +67,13 @@ class Scanner : CliktCommand() {
      * parsed.
      */
     override fun run() {
+        // if we're given more than one spdx file, our headings list the spdx file name
         val showFilename = files.size > 1
+        if (!showFilename)
+            println("Showing files ${predicate.describe()}:")
         files.forEach {
             if (showFilename)
-                println(it.name)
+                println("Showing files described in ${it.name} that are ${predicate.describe()}:")
             process(it)
         }
     }
@@ -78,5 +81,3 @@ class Scanner : CliktCommand() {
 }
 
 fun main(args: Array<String>) = Scanner().main(args)
-//    app.load("e:/src-ssd/openxr-maintainer-scripts/OpenXR-SDK-Source/OpenXR-SDK-Source.spdx")
-
