@@ -13,9 +13,6 @@ import org.spdx.library.ModelCopyManager
 import org.spdx.library.SpdxConstants
 import org.spdx.library.model.SpdxDocument
 import org.spdx.library.model.SpdxFile
-import org.spdx.library.model.license.AnyLicenseInfo
-import org.spdx.library.model.license.LicenseInfoFactory
-import org.spdx.library.model.license.SpdxListedLicense
 import org.spdx.storage.ISerializableModelStore
 import org.spdx.storage.simple.InMemSpdxStore
 import org.spdx.tagvaluestore.TagValueStore
@@ -26,17 +23,13 @@ class Scanner : CliktCommand() {
     private val files: List<File> by argument(help = "Path to an SPDX Tag/Value data file like produced by reuse spdx")
             .file(mustExist = true)
             .multiple(required = true)
-    private val asl2: SpdxListedLicense = LicenseInfoFactory.getListedLicenseById("Apache-2.0")
-    private val mit: SpdxListedLicense = LicenseInfoFactory.getListedLicenseById("MIT")
+
+    private val predicate: IFilePredicate = KhronosDualLicensePredicate()
 
     private val copyManager: ModelCopyManager = ModelCopyManager()
     private val store: ISerializableModelStore = TagValueStore(InMemSpdxStore())
 
     data class ParsedDoc(val documentUri: String, val spdxDocument: SpdxDocument)
-
-    private fun checkLicenseSet(licenseInfo: Collection<AnyLicenseInfo>) = licenseInfo.size == 2
-            && licenseInfo.any { it.equivalent(asl2) }
-            && licenseInfo.any { it.equivalent(mit) }
 
     private fun parseDoc(infile: File): ParsedDoc {
         val documentUri = infile.inputStream().use {
@@ -52,17 +45,12 @@ class Scanner : CliktCommand() {
         return ParsedDoc(documentUri, doc)
     }
 
-    fun process(infile: File) {
-
+    private fun process(infile: File) {
         with(parseDoc(infile)) {
             spdxDocument.documentDescribes
                     .filter { it.type == SpdxConstants.CLASS_SPDX_FILE }
                     .map { it as SpdxFile }
-                    .filter {
-                        val licenseInfo = it.licenseInfoFromFiles
-                        return@filter checkLicenseSet(licenseInfo)
-                                && it.copyrightText.contains("Khronos")
-                    }
+                    .filter { predicate.matches(it) }
                     .forEach {
                         println(it.name.get().replace("\\", "/"))
                     }
