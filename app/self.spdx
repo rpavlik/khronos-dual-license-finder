@@ -2,26 +2,27 @@ SPDXVersion: SPDX-2.1
 DataLicense: CC0-1.0
 SPDXID: SPDXRef-DOCUMENT
 DocumentName: process-spdx
-DocumentNamespace: http://spdx.org/spdxdocs/spdx-v2.1-7fdeea2f-b330-449e-8fc3-480135d5d27e
+DocumentNamespace: http://spdx.org/spdxdocs/spdx-v2.1-0c483f79-60e8-451f-9c6b-c765ce1bd867
 Creator: Person: Anonymous ()
 Creator: Organization: Anonymous ()
 Creator: Tool: reuse-0.12.1
-Created: 2021-02-01T21:10:55Z
+Created: 2021-02-01T21:41:45Z
 CreatorComment: <text>This document was created automatically using available reuse information consistent with REUSE.</text>
 Relationship: SPDXRef-DOCUMENT describes SPDXRef-2f29ebbe79e91ba25dee1773675a03cd
 Relationship: SPDXRef-DOCUMENT describes SPDXRef-d2db856bd924decd8d1ac8a30a6a49ab
 Relationship: SPDXRef-DOCUMENT describes SPDXRef-577a06029df1a5d637fe10a4230d7c7a
-Relationship: SPDXRef-DOCUMENT describes SPDXRef-cdc32af50d694f7a0a82b95d357af416
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-7b1e0d43bdab7ed83603d885a4325659
 Relationship: SPDXRef-DOCUMENT describes SPDXRef-e3e8d50c6596f138d20779c173c6c63d
 Relationship: SPDXRef-DOCUMENT describes SPDXRef-ab3dd99de0c36ff15f80dc75e5aa1ee9
-Relationship: SPDXRef-DOCUMENT describes SPDXRef-eeccfb32958909c8cfd6c147ea073a71
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-47b65132624def6ae21be0bd79f54c17
 Relationship: SPDXRef-DOCUMENT describes SPDXRef-37694bbbcff329d7218c32064af2bc77
-Relationship: SPDXRef-DOCUMENT describes SPDXRef-b3e98d79818cfb7edd775e26360edd84
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-5aec300928f4aee8f1b02ba08edd4e33
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-669613ddfc16797f7a2dad121d77a609
 Relationship: SPDXRef-DOCUMENT describes SPDXRef-a71ef034dab305a16e027c66d95bacb2
 Relationship: SPDXRef-DOCUMENT describes SPDXRef-a57d8e81734085b21b763fde72ae1d1b
 Relationship: SPDXRef-DOCUMENT describes SPDXRef-b4653d45bea2472d56355fa50a7e22dd
 Relationship: SPDXRef-DOCUMENT describes SPDXRef-f535e211d959dae65424814997231fe5
-Relationship: SPDXRef-DOCUMENT describes SPDXRef-71bac38d8841a7f86018bd22f4f49608
+Relationship: SPDXRef-DOCUMENT describes SPDXRef-fabdb7e6ca44e85ceba82b628ade2a91
 
 FileName: ./.gitattributes
 SPDXID: SPDXRef-2f29ebbe79e91ba25dee1773675a03cd
@@ -42,10 +43,12 @@ LicenseConcluded: NOASSERTION
 FileCopyrightText: NONE
 
 FileName: ./app\build.gradle
-SPDXID: SPDXRef-cdc32af50d694f7a0a82b95d357af416
-FileChecksum: SHA1: 9a9eb11313be937dd1ff26c9afcb513657d63c58
+SPDXID: SPDXRef-7b1e0d43bdab7ed83603d885a4325659
+FileChecksum: SHA1: a9eb778c631fffc89f8a6c88ebdb0426e662dec4
 LicenseConcluded: NOASSERTION
-FileCopyrightText: NONE
+LicenseInfoInFile: Apache-2.0
+LicenseInfoInFile: MIT
+FileCopyrightText: <text>Copyright 2021, The Khronos Group Inc.</text>
 
 FileName: ./app\build.gradle.kts.old
 SPDXID: SPDXRef-e3e8d50c6596f138d20779c173c6c63d
@@ -61,8 +64,8 @@ LicenseInfoInFile: BSL-1.0
 FileCopyrightText: <text>Copyright 2021, Collabora, Ltd.</text>
 
 FileName: ./app\src\main\resources\META-INF\app_org.khronos.spdx\app_org.khronos.spdx.dual_license_finder\native-image.properties
-SPDXID: SPDXRef-eeccfb32958909c8cfd6c147ea073a71
-FileChecksum: SHA1: bedfd629083fb74985f049bf2cd2be8891dcaa05
+SPDXID: SPDXRef-47b65132624def6ae21be0bd79f54c17
+FileChecksum: SHA1: 0e48068d08bdc72be526d57ec58c06cad7dd61fa
 LicenseConcluded: NOASSERTION
 FileCopyrightText: NONE
 
@@ -72,11 +75,18 @@ FileChecksum: SHA1: 39d379ff8e4eb20c0453e4f13e8d3689177b21d9
 LicenseConcluded: NOASSERTION
 FileCopyrightText: NONE
 
-FileName: ./build.gradle.kts
-SPDXID: SPDXRef-b3e98d79818cfb7edd775e26360edd84
-FileChecksum: SHA1: d32f5090ba703d9a5aee603dfe56fa6c609318d3
+FileName: ./app\src\main\resources\logback.xml
+SPDXID: SPDXRef-5aec300928f4aee8f1b02ba08edd4e33
+FileChecksum: SHA1: 99855a2feb5b69321b1be3909185fcf067149fd7
 LicenseConcluded: NOASSERTION
 FileCopyrightText: NONE
+
+FileName: ./build.gradle.kts
+SPDXID: SPDXRef-669613ddfc16797f7a2dad121d77a609
+FileChecksum: SHA1: b2748aa8b7123463045041aa32c40edc3e48a820
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: BSL-1.0
+FileCopyrightText: <text>Copyright 2021, Collabora, Ltd.</text>
 
 FileName: ./gradle\wrapper\gradle-wrapper.jar
 SPDXID: SPDXRef-a71ef034dab305a16e027c66d95bacb2
@@ -103,7 +113,8 @@ LicenseConcluded: NOASSERTION
 FileCopyrightText: <text>Copyright 2015 the original author or authors.</text>
 
 FileName: ./settings.gradle.kts
-SPDXID: SPDXRef-71bac38d8841a7f86018bd22f4f49608
-FileChecksum: SHA1: 974e9ec891dc95f0888d8cfe2503dd8bfafaa0cd
+SPDXID: SPDXRef-fabdb7e6ca44e85ceba82b628ade2a91
+FileChecksum: SHA1: f55b6941e4695d19e199620e27dd505e4e6c9654
 LicenseConcluded: NOASSERTION
-FileCopyrightText: NONE
+LicenseInfoInFile: BSL-1.0
+FileCopyrightText: <text>Copyright 2021, Collabora, Ltd.</text>
