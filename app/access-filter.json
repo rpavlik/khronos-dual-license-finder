@@ -1,0 +1,3 @@
+{
+    "excludeClasses": "org.graalvm.compiler.hotspot.management.AggregatedMemoryPoolBean"
+}
