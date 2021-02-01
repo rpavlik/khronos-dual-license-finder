@@ -50,6 +50,7 @@ dependencies {
 group 'org.khronos.spdx'
 sourceCompatibility = 1.11
 mainClassName = "org.khronos.spdx.dual_license_finder.AppKt"
+version = "0.1.0"
 
 compileKotlin {
     kotlinOptions.jvmTarget = "11"
